@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pankaj Sharma | Senior Security Strategist</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#dee2f6",
+                        "surface-variant": "#303444",
+                        "on-tertiary-container": "#3a3c3c",
+                        "surface-container-low": "#161b2a",
+                        "secondary-fixed-dim": "#c1c7cf",
+                        "on-primary": "#003640",
+                        "surface-bright": "#343948",
+                        "on-secondary-fixed-variant": "#41474e",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary": "#2f3131",
+                        "secondary": "#c1c7cf",
+                        "surface-dim": "#0e1321",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#4cd7f6",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#00687a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-lowest": "#090e1c",
+                        "surface-container": "#1a1f2e",
+                        "outline-variant": "#3d494c",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#a5a6a6",
+                        "primary": "#4cd7f6",
+                        "on-secondary": "#2b3137",
+                        "primary-container": "#06b6d4",
+                        "outline": "#869397",
+                        "inverse-on-surface": "#2b303f",
+                        "primary-fixed": "#acedff",
+                        "inverse-surface": "#dee2f6",
+                        "tertiary": "#c6c6c7",
+                        "secondary-fixed": "#dde3eb",
+                        "on-surface-variant": "#bcc9cd",
+                        "background": "#0e1321",
+                        "surface-container-high": "#252a39",
+                        "surface-tint": "#4cd7f6",
+                        "on-primary-fixed-variant": "#004e5c",
+                        "secondary-container": "#41474e",
+                        "on-secondary-fixed": "#161c22",
+                        "on-secondary-container": "#afb6bd",
+                        "on-primary-container": "#00424f",
+                        "on-primary-fixed": "#001f26",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-background": "#dee2f6",
+                        "surface": "#0e1321",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#303444"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+
+        .architectural-grid {
+            background-image: linear-gradient(to right, rgba(76, 215, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(76, 215, 246, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        .glow-border {
+            border: 1px solid rgba(76, 215, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glow-border:hover {
+            border: 1px solid rgba(76, 215, 246, 0.5);
+            box-shadow: 0 0 20px rgba(76, 215, 246, 0.1);
+            transform: translateY(-4px);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-title {
+            text-shadow: 0 0 30px rgba(76, 215, 246, 0.2);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0e1321;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1a1f2e;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4cd7f6;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#0E1321]/80 backdrop-blur-xl border-b border-[#4CD7F6]/20 flex justify-between items-center px-12 h-24">
+        <div class="text-2xl font-black text-white uppercase tracking-tighter">
+            Pankaj Sharma
+        </div>
+        <div class="hidden md:flex gap-10">
+            <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#4CD7F6] border-b-2 border-[#4CD7F6] pb-1"
+                href="#profile">Profile</a>
+            <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
+                href="#pillars">Strategic Pillars</a>
+            <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
+                href="#deployments">Deployments</a>
+            <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
+                href="#credentials">Credentials</a>
+        </div>
+        <div class="md:hidden">
+            <span
+                class="material-symbols-outlined text-primary cursor-pointer hover:rotate-90 transition-transform duration-300">menu</span>
+        </div>
+    </nav>
+
+    <main class="pt-24 architectural-grid">
+        <!-- Hero Section -->
+        <section
+            class="min-h-screen flex flex-col md:flex-row relative overflow-hidden border-b border-outline-variant/20">
+            <div class="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-end z-10">
+                <div class="h-0.5 w-16 bg-primary mb-8 animate-pulse"></div>
+                <h1
+                    class="text-[12vw] md:text-[8vw] font-black leading-[0.85] tracking-tighter uppercase text-white mb-6 hero-title">
+                    Pankaj<br />Sharma
+                </h1>
+                <p class="font-label text-primary uppercase tracking-[0.3em] text-lg md:text-xl">
+                    Assistant Director of Security
+                </p>
+            </div>
+            <div class="w-full md:w-1/2 relative bg-surface-container overflow-hidden">
+                <img alt="Professional portrait of Pankaj Sharma"
+                    class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-80 hover:scale-110 transition-transform duration-1000"
+                    src="https://static.wixstatic.com/media/ad2999_8e28ab0efc37422e9332fb4f0b7682de~mv2.webp"
+                    style="object-position: 40% 50%;" />
+                <div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent md:block hidden"></div>
+            </div>
+        </section>
+
+        <!-- Profile -->
+        <section class="py-32 px-12 md:px-24 max-w-7xl mx-auto" id="profile">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+                <div class="md:col-span-4">
+                    <h2 class="font-label text-primary uppercase tracking-widest mb-4">01 // Profile</h2>
+                    <h3 class="text-4xl font-black uppercase tracking-tighter leading-tight text-white">
+                        Architecting Structural Resilience
+                    </h3>
+                </div>
+
+                <div class="md:col-span-8 flex flex-col gap-12">
+                    <p class="text-2xl font-bold leading-relaxed text-on-surface">
+                        "Security is not a perimeter; it is a philosophy of architectural integrity. We do not just
+                        protect assets; we design ecosystems where safety is an inherent property of the space."
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-on-secondary-container leading-relaxed">
+                        <p>
+                            With over two decades of experience in high-level security strategy, Pankaj Sharma has
+                            redefined the role of physical and digital protection within corporate and private sectors.
+                            As Assistant Director, he merges traditional tactical expertise with modern architectural
+                            psychology.
+                        </p>
+                        <p>
+                            His approach focuses on the 'Silent Sentinel' methodology—where security measures are
+                            seamlessly integrated into the environment, providing maximum protection with minimal visual
+                            friction for stakeholders.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Pillars -->
+        <section class="py-32 bg-surface-container-lowest" id="pillars">
+            <div class="px-12 md:px-24 mb-16">
+                <div class="h-0.5 w-16 bg-primary mb-8"></div>
+                <h2 class="text-5xl font-black uppercase tracking-tighter text-white">Strategic Pillars</h2>
+            </div>
+            <div class="px-12 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-1">
+                <div class="bg-surface p-12 glow-border flex flex-col justify-between min-h-[320px] group">
+                    <span
+                        class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">security</span>
+                    <div>
+                        <span class="font-label text-xs text-primary/60 uppercase mb-2 block">Pillar_01</span>
+                        <h4 class="text-xl font-bold uppercase text-white">Threat Assessment</h4>
+                        <p class="text-on-secondary-container text-sm mt-4">Predictive modeling of multi-vector security
+                            risks across global operational theaters.</p>
+                    </div>
+                </div>
+                <div class="bg-surface p-12 glow-border flex flex-col justify-between min-h-[320px] group">
+                    <span
+                        class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">architecture</span>
+                    <div>
+                        <span class="font-label text-xs text-primary/60 uppercase mb-2 block">Pillar_02</span>
+                        <h4 class="text-xl font-bold uppercase text-white">Physical Integration</h4>
+                        <p class="text-on-secondary-container text-sm mt-4">Seamless blending of hardened security
+                            infrastructure into premium architectural designs.</p>
+                    </div>
+                </div>
+                <div class="bg-surface p-12 glow-border flex flex-col justify-between min-h-[320px] group">
+                    <span
+                        class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">policy</span>
+                    <div>
+                        <span class="font-label text-xs text-primary/60 uppercase mb-2 block">Pillar_03</span>
+                        <h4 class="text-xl font-bold uppercase text-white">Protocol Design</h4>
+                        <p class="text-on-secondary-container text-sm mt-4">Development of high-level engagement rules
+                            and executive protection frameworks.</p>
+                    </div>
+                </div>
+                <div class="bg-surface p-12 glow-border flex flex-col justify-between min-h-[320px] group">
+                    <span
+                        class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">shield_person</span>
+                    <div>
+                        <span class="font-label text-xs text-primary/60 uppercase mb-2 block">Pillar_04</span>
+                        <h4 class="text-xl font-bold uppercase text-white">Asset Shielding</h4>
+                        <p class="text-on-secondary-container text-sm mt-4">Securing high-value physical assets through
+                            layered technical and human intelligence.</p>
+                    </div>
+                </div>
+                <div class="bg-surface p-12 glow-border flex flex-col justify-between min-h-[320px] group">
+                    <span
+                        class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">hub</span>
+                    <div>
+                        <span class="font-label text-xs text-primary/60 uppercase mb-2 block">Pillar_05</span>
+                        <h4 class="text-xl font-bold uppercase text-white">Logistics Strategy</h4>
+                        <p class="text-on-secondary-container text-sm mt-4">Coordination of secure transit and rapid
+                            deployment teams in volatile environments.</p>
+                    </div>
+                </div>
+                <div class="bg-surface p-12 glow-border flex flex-col justify-between min-h-[320px] group">
+                    <span
+                        class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">monitoring</span>
+                    <div>
+                        <span class="font-label text-xs text-primary/60 uppercase mb-2 block">Pillar_06</span>
+                        <h4 class="text-xl font-bold uppercase text-white">Operational Audit</h4>
+                        <p class="text-on-secondary-container text-sm mt-4">Continuous stress-testing of active security
+                            systems and response personnel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployments -->
+        <section class="py-32 px-12 md:px-24" id="deployments">
+            <h2 class="font-label text-primary uppercase tracking-widest mb-16">02 // Deployments</h2>
+            <div class="space-y-32">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                    <div class="md:col-span-5 relative overflow-hidden aspect-video">
+                        <img alt="Luxury high-rise project"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdhiVJv84jmyzIu7XxS64UPtG2BjOkrKkAZ1G8XnrQ4ZUauM4w9x_yisJYRxeLHDY04jYbEPJYxhCmgJCY1wbo2M_UMe6U3E3c0cQhPDfjgSgqMa_PZTeJIhU5YPRpapqIVIRlpuew7TxpDP1qHorBuaww-fu9od2pfMjq827BroGTiRWZt0xYnXrJX-hWMr4lOhAqa38nsRXAfnkzpam_5If904a1IMDpLhaUgVwg_ssULWE3S5TaxZetMNJigp7c9ypAa7fP9ZFP" />
+                        <div class="absolute top-0 left-0 bg-primary text-on-primary px-4 py-2 font-label text-xs">
+                            LOG_0824</div>
+                    </div>
+                    <div class="md:col-span-7 md:pl-12">
+                        <span class="font-label text-primary text-sm uppercase">Site_01 / London Financial
+                            District</span>
+                        <h4
+                            class="text-3xl font-black text-white uppercase mt-2 mb-4 group-hover:text-primary transition-colors">
+                            Metropolis Core Hardening</h4>
+                        <p class="text-on-secondary-container leading-relaxed max-w-xl">
+                            Oversaw the full-scale security redesign of a Tier-1 financial headquarters. Implemented
+                            biometric airlocks and kinetic impact glass throughout the primary executive floors while
+                            maintaining an aesthetic of open transparency.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                    <div class="md:col-span-7 order-2 md:order-1 md:pr-12 md:text-right flex flex-col md:items-end">
+                        <span class="font-label text-primary text-sm uppercase">Site_02 / Private Estate,
+                            Switzerland</span>
+                        <h4
+                            class="text-3xl font-black text-white uppercase mt-2 mb-4 group-hover:text-primary transition-colors">
+                            Alpine Perimeter Shield</h4>
+                        <p class="text-on-secondary-container leading-relaxed max-w-xl">
+                            Engineered a multi-layered infrared and seismic sensor grid for a 40-acre residential
+                            estate. Developed a specialized rapid-response protocol for extreme terrain environments.
+                        </p>
+                    </div>
+                    <div class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-video">
+                        <img alt="Modern mountain residence"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdKP_M65okK8llLc5dbiUymyvXWyRsHpvF1kMYpet2oXBrvHWRDUox_STdZszQ8xO3Mn4fu1xu9wkKXeUH9o9mvLIblZwMhsLrE3A2NPzVwm8Nf0vnczllHEAdTnR2KL-Nw1Omn1Jdy_Rqzh-eqi7O2BB8UTZ_LO4r_2t8bPuYuhXHqrdghlUR55Emf22ze0RAbKsypxgf-fuq5bc7EYu6hXaXDUD6qFV4gQo0rcsSiwKxbZrDXNi7IlgHl7TriZ1lS_V7Ngv0voQu" />
+                        <div class="absolute top-0 right-0 bg-primary text-on-primary px-4 py-2 font-label text-xs">
+                            LOG_1223</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
+                    <div class="md:col-span-5 relative overflow-hidden aspect-video">
+                        <img alt="Industrial high-security facility"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSodXGHgDQmaU_2IEd3XYat_6xAVIQpyeqj_lMxgEzEjB-NSYaS5AEu5Gu0bzy3uIj94Q4Pv3Pr0TAJn3oTTXCzWtKxLSC7fwE5BVeC2iLpJriqITZ9RioJHJ0KRngI0rFxt_8lpyWW-hagQ1NwgCf0H2ewVHY5LAyQUAo4wkgIurh4rSY83LHNLSo-AHXDodafOMojbdjQZ7dBhzYOjxar_KKkeX0PoK6y25qpI7Ud1jIGcDcSdy6lF-3G05AzSLSHpLfYGMF_LJj" />
+                        <div class="absolute top-0 left-0 bg-primary text-on-primary px-4 py-2 font-label text-xs">
+                            LOG_0424</div>
+                    </div>
+                    <div class="md:col-span-7 md:pl-12">
+                        <span class="font-label text-primary text-sm uppercase">Site_03 / Offshore Energy Hub</span>
+                        <h4
+                            class="text-3xl font-black text-white uppercase mt-2 mb-4 group-hover:text-primary transition-colors">
+                            Maritime Resource Security</h4>
+                        <p class="text-on-secondary-container leading-relaxed max-w-xl">
+                            Commanded the security overhaul for a deep-water energy extraction platform. Integrated
+                            drone-based surveillance with automated marine threat detection systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials -->
+        <section class="py-24 bg-surface-container border-y border-primary/10" id="credentials">
+            <div class="px-12 md:px-24 overflow-x-auto">
+                <div class="flex items-center gap-16 min-w-max">
+                    <div class="flex flex-col">
+                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
+                        <span class="text-white font-black text-xl tracking-tighter uppercase">ASIS CPP®</span>
+                    </div>
+                    <div class="h-12 w-[1px] bg-primary/20"></div>
+                    <div class="flex flex-col">
+                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
+                        <span class="text-white font-black text-xl tracking-tighter uppercase">PSP® Board
+                            Certified</span>
+                    </div>
+                    <div class="h-12 w-[1px] bg-primary/20"></div>
+                    <div class="flex flex-col">
+                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
+                        <span class="text-white font-black text-xl tracking-tighter uppercase">Certified Ethical
+                            Hacker</span>
+                    </div>
+                    <div class="h-12 w-[1px] bg-primary/20"></div>
+                    <div class="flex flex-col">
+                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
+                        <span class="text-white font-black text-xl tracking-tighter uppercase">TAPA FSR Level A</span>
+                    </div>
+                    <div class="h-12 w-[1px] bg-primary/20"></div>
+                    <div class="flex flex-col">
+                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
+                        <span class="text-white font-black text-xl tracking-tighter uppercase">M.S. Strategic
+                            Security</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-48 px-12 md:px-24 flex flex-col items-center text-center">
+            <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter mb-12">Secure
+                Your<br />Environment.</h2>
+            <a class="relative group overflow-hidden bg-primary text-on-primary px-12 py-6 font-label font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95"
+                href="mailto:sharma.p@securearch.tech">
+                <span class="relative z-10">Request Strategy Consultation</span>
+                <div
+                    class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-[#090E1C] w-full border-t border-[#4CD7F6]/10 flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+        <div class="text-lg font-bold text-[#4CD7F6] font-mono">
+            © 2024 PANKAJ SHARMA // SECURE_ARCHITECT
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#AFB6BD] hover:text-[#4CD7F6] transition-colors"
+                href="#">Privacy Protocol</a>
+            <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#AFB6BD] hover:text-[#4CD7F6] transition-colors"
+                href="#">Terms of Engagement</a>
+            <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#AFB6BD] hover:text-[#4CD7F6] transition-colors"
+                href="#">Security Disclosure</a>
+        </div>
+        <div class="flex gap-4">
+            <span
+                class="material-symbols-outlined text-[#4CD7F6]/60 cursor-pointer hover:text-primary transition-colors">lock</span>
+            <span
+                class="material-symbols-outlined text-[#4CD7F6]/60 cursor-pointer hover:text-primary transition-colors">terminal</span>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle (simple)
+        const menuBtn = document.querySelector('.md\\:hidden span');
+        menuBtn.addEventListener('click', () => {
+            alert('Menu functionality to be implemented.');
+        });
+    </script>
+
+</body>
+
+</html>
