@@ -124,6 +124,22 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #4cd7f6;
         }
+
+        @keyframes bounce-subtle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .animate-bounce-subtle {
+            animation: bounce-subtle 2s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -141,7 +157,9 @@
             <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
                 href="#pillars">Strategic Pillars</a>
             <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
-                href="#deployments">Deployments</a>
+                href="#experience">Experiences</a>
+            <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
+                href="#special-projects">Special Projects</a>
             <a class="font-['Inter'] font-bold uppercase tracking-tighter text-[#AFB6BD] hover:text-white transition-colors"
                 href="#credentials">Credentials</a>
         </div>
@@ -153,25 +171,69 @@
 
     <main class="pt-24 architectural-grid">
         <!-- Hero Section -->
-        <section
-            class="min-h-screen flex flex-col md:flex-row relative overflow-hidden border-b border-outline-variant/20">
-            <div class="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-end z-10">
-                <div class="h-0.5 w-16 bg-primary mb-8 animate-pulse"></div>
-                <h1
-                    class="text-[12vw] md:text-[8vw] font-black leading-[0.85] tracking-tighter uppercase text-white mb-6 hero-title">
-                    Pankaj<br />Sharma
-                </h1>
-                <p class="font-label text-primary uppercase tracking-[0.3em] text-lg md:text-xl">
-                    Assistant Director of Security
-                </p>
-            </div>
-            <div class="w-full md:w-1/2 relative bg-surface-container overflow-hidden">
+        <section class="relative min-h-screen overflow-hidden border-b border-outline-variant/20">
+
+            <!-- Full-bleed image: fills entire section on mobile, right half on desktop -->
+            <div class="absolute inset-0 md:left-1/2 bg-surface-container">
                 <img alt="Professional portrait of Pankaj Sharma"
                     class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-80 hover:scale-110 transition-transform duration-1000"
                     src="https://static.wixstatic.com/media/ad2999_8e28ab0efc37422e9332fb4f0b7682de~mv2.webp"
                     style="object-position: 40% 50%;" />
-                <div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent md:block hidden"></div>
+                <!-- On desktop: fade image into the left text panel -->
+                <div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent hidden md:block"></div>
             </div>
+
+            <!-- Mobile gradient: darkens bottom so text is readable -->
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-transparent md:hidden"></div>
+
+            <!-- Text content: on mobile — absolute bottom third; on desktop — left half normal flow -->
+            <div
+                class="absolute bottom-0 left-0 right-0 p-8 pb-12 z-10 md:static md:w-1/2 md:min-h-screen md:p-24 md:flex md:flex-col md:justify-end">
+                <div class="h-0.5 w-16 bg-primary mb-6 animate-pulse"></div>
+                <h1
+                    class="text-[16vw] md:text-[8vw] font-black leading-[0.85] tracking-tighter uppercase text-white mb-4 hero-title">
+                    Pankaj<br />Sharma
+                </h1>
+                <p class="font-label text-primary uppercase tracking-[0.3em] text-base md:text-xl">
+                    Assistant Director of Security
+                </p>
+                <div class="mt-6 flex flex-col gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="font-label text-primary/50 text-[10px] uppercase tracking-widest w-10">DOB</span>
+                        <span class="w-[1px] h-3 bg-primary/30"></span>
+                        <span class="font-mono text-on-secondary-container text-sm">04.12.1988</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="font-label text-primary/50 text-[10px] uppercase tracking-widest w-10">TEL</span>
+                        <span class="w-[1px] h-3 bg-primary/30"></span>
+                        <a href="tel:+971526742556"
+                            class="font-mono text-on-secondary-container text-sm hover:text-primary transition-colors">+971
+                            52 674 2556</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="font-label text-primary/50 text-[10px] uppercase tracking-widest w-10">MAIL</span>
+                        <span class="w-[1px] h-3 bg-primary/30"></span>
+                        <a href="mailto:shrpanky@gmail.com"
+                            class="font-mono text-on-secondary-container text-sm hover:text-primary transition-colors">shrpanky@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- DOWNLOAD CV BUTTON -->
+                <div class="mt-12">
+                    <a href="#" download="Pankaj_Sharma_Security_CV.pdf"
+                        class="group relative inline-flex items-center gap-4 bg-white/5 backdrop-blur-md border border-white/10 px-8 py-4 transition-all duration-300 hover:bg-primary hover:border-primary active:scale-95">
+                        <span
+                            class="font-label text-xs font-bold uppercase tracking-[0.2em] text-white group-hover:text-surface transition-colors">Download
+                            CV / Portfolio</span>
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:text-surface text-xl animate-bounce-subtle transition-colors">download</span>
+                        <div
+                            class="absolute inset-0 border border-white/0 group-hover:border-white/20 -m-1.5 transition-all duration-300">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
         </section>
 
         <!-- Profile -->
@@ -180,27 +242,23 @@
                 <div class="md:col-span-4">
                     <h2 class="font-label text-primary uppercase tracking-widest mb-4">01 // Profile</h2>
                     <h3 class="text-4xl font-black uppercase tracking-tighter leading-tight text-white">
-                        Architecting Structural Resilience
+                        Executive Summary
                     </h3>
                 </div>
 
                 <div class="md:col-span-8 flex flex-col gap-12">
-                    <p class="text-2xl font-bold leading-relaxed text-on-surface">
-                        "Security is not a perimeter; it is a philosophy of architectural integrity. We do not just
-                        protect assets; we design ecosystems where safety is an inherent property of the space."
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-on-secondary-container leading-relaxed">
+
+                    <div class="text-on-secondary-container text-xl leading-relaxed space-y-6">
                         <p>
-                            With over 17 years of experience in high-level security strategy, Pankaj Sharma has
-                            redefined the role of physical and digital protection within corporate and private sectors.
-                            As Assistant Director, he merges traditional tactical expertise with modern architectural
-                            psychology.
+                            A highly trained, diligent, trustworthy, approachable, and observational professional with
+                            over 17 years of hands-on experience in the hospitality industry across prestigious 5-star
+                            hotels and offshore properties. Seeking a challenging position to utilize a vigilant eye and
+                            skills in emergency response, crisis intervention, and problem resolution.
                         </p>
                         <p>
-                            His approach focuses on the 'Silent Sentinel' methodology—where security measures are
-                            seamlessly integrated into the environment, providing maximum protection with minimal visual
-                            friction for stakeholders.
-                        </p>
+                            Dedicated to giving one hundred percent whether as a team player or as an individual person,
+                            expanding knowledge to enhance performance, and always remaining an active and loyal player
+                            to the company. </p>
                     </div>
                 </div>
             </div>
@@ -276,9 +334,9 @@
             </div>
         </section>
 
-        <!-- Deployments -->
-        <section class="py-32 px-12 md:px-24" id="deployments">
-            <h2 class="font-label text-primary uppercase tracking-widest mb-16">02 // Deployments</h2>
+        <!-- Special Projects -->
+        <section class="py-32 px-12 md:px-24" id="special-projects">
+            <h2 class="font-label text-primary uppercase tracking-widest mb-16">02 // Special Projects</h2>
             <div class="space-y-32">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center group">
                     <div class="md:col-span-5 relative overflow-hidden aspect-video">
@@ -366,7 +424,9 @@
                 <!-- Entry 01: Rixos Abu Dhabi Saadiyat Island -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center group">
                     <div id="img-exp-01" class="md:col-span-5 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="Rixos Premium Saadiyat Island Abu Dhabi" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://www.ahstatic.com/photos/b399_ho_02_p_1024x768.jpg" />
+                        <img alt="Rixos Premium Saadiyat Island Abu Dhabi"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://www.ahstatic.com/photos/b399_ho_02_p_1024x768.jpg" />
                     </div>
                     <div class="md:col-span-7 md:pl-12">
                         <p class="font-label text-primary text-xs uppercase tracking-widest mb-3">2019 — Present</p>
@@ -417,15 +477,20 @@
                                 &amp; Safety Protocols</span>
                         </div>
                     </div>
-                    <div id="img-exp-02" class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="The Heart of Europe World Island" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://www.hoteliermiddleeast.com/2021/05/nVcDus3I-Heart-of-Europe-1.jpg" />
+                    <div id="img-exp-02"
+                        class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-square min-h-[360px]">
+                        <img alt="The Heart of Europe World Island"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://www.hoteliermiddleeast.com/2021/05/nVcDus3I-Heart-of-Europe-1.jpg" />
                     </div>
                 </div>
 
                 <!-- Entry 03: Rixos Hotel The Palm Dubai (Senior Supervisor) -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center group">
                     <div id="img-exp-03" class="md:col-span-5 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="Rixos The Palm Dubai" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://www.hoteliermiddleeast.com/2021/05/1cFPRn9e-rixosdubai.jpg" />
+                        <img alt="Rixos The Palm Dubai"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://www.hoteliermiddleeast.com/2021/05/1cFPRn9e-rixosdubai.jpg" />
                     </div>
                     <div class="md:col-span-7 md:pl-12">
                         <p class="font-label text-primary text-xs uppercase tracking-widest mb-3">2016 — 2017</p>
@@ -475,15 +540,20 @@
                                 Property SOPs</span>
                         </div>
                     </div>
-                    <div id="img-exp-04" class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="Bonnington Jumeirah Lakes Towers" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://www.hoteliermiddleeast.com/2021/05/nu3idFqt-bonnintgton-HME.jpg" />
+                    <div id="img-exp-04"
+                        class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-square min-h-[360px]">
+                        <img alt="Bonnington Jumeirah Lakes Towers"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://www.hoteliermiddleeast.com/2021/05/nu3idFqt-bonnintgton-HME.jpg" />
                     </div>
                 </div>
 
                 <!-- Entry 05: Rixos Hotel The Palm Dubai (Team Leader) -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center group">
                     <div id="img-exp-05" class="md:col-span-5 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="Rixos The Palm Dubai" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://www.hoteliermiddleeast.com/2021/05/1cFPRn9e-rixosdubai.jpg" />
+                        <img alt="Rixos The Palm Dubai"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://www.hoteliermiddleeast.com/2021/05/1cFPRn9e-rixosdubai.jpg" />
                     </div>
                     <div class="md:col-span-7 md:pl-12">
                         <p class="font-label text-primary text-xs uppercase tracking-widest mb-3">2011 — 2014</p>
@@ -529,15 +599,20 @@
                                 Security</span>
                         </div>
                     </div>
-                    <div id="img-exp-06" class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="Grand Hyatt Hotel Dubai" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/b9/d9/0d/grand-hyatt-dubai-waterpark.jpg?w=900&h=500&s=1" />
+                    <div id="img-exp-06"
+                        class="md:col-span-5 order-1 md:order-2 relative overflow-hidden aspect-square min-h-[360px]">
+                        <img alt="Grand Hyatt Hotel Dubai"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/b9/d9/0d/grand-hyatt-dubai-waterpark.jpg?w=900&h=500&s=1" />
                     </div>
                 </div>
 
                 <!-- Entry 07: VFS Global Visa Center -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center group">
                     <div id="img-exp-07" class="md:col-span-5 relative overflow-hidden aspect-square min-h-[360px]">
-                        <img alt="VFS Global Visa Center" class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" src="https://mastercms.alhilalgroup.com/source/TA/2017/03/15/TA_20170315132726550_321992.jpg" />
+                        <img alt="VFS Global Visa Center"
+                            class="absolute inset-0 w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
+                            src="https://mastercms.alhilalgroup.com/source/TA/2017/03/15/TA_20170315132726550_321992.jpg" />
                     </div>
                     <div class="md:col-span-7 md:pl-12">
                         <p class="font-label text-primary text-xs uppercase tracking-widest mb-3">2009 — 2010</p>
@@ -564,40 +639,103 @@
             </div>
         </section>
 
-        <!-- Credentials -->
-        <section class="py-24 bg-surface-container border-y border-primary/10" id="credentials">
-            <div class="px-12 md:px-24 overflow-x-auto">
-                <div class="flex items-center gap-16 min-w-max">
-                    <div class="flex flex-col">
-                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
-                        <span class="text-white font-black text-xl tracking-tighter uppercase">ASIS CPP®</span>
+        <!-- Credentials Ticker -->
+        <section class="py-20 bg-surface-container border-y border-primary/10 overflow-hidden" id="credentials">
+            <div class="relative w-full overflow-hidden" id="cred-ticker-outer">
+                <div class="flex items-center will-change-transform" id="cred-ticker-track"
+                    style="width: max-content; animation-play-state: paused;">
+
+                    <!-- SET A -->
+                    <div class="flex items-stretch shrink-0">
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Bachelor
+                                of Arts (BA)</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">DPS
+                                Certified Security</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">NEBOSH
+                                IGC in Health &amp; Safety</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Active
+                                Shooter Response</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Fire
+                                &amp; Safety ERT Specialist</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Group
+                                Train the Trainer Cert</span></div>
                     </div>
-                    <div class="h-12 w-[1px] bg-primary/20"></div>
-                    <div class="flex flex-col">
-                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
-                        <span class="text-white font-black text-xl tracking-tighter uppercase">PSP® Board
-                            Certified</span>
+                    <!-- SET B (duplicate for seamless loop) -->
+                    <div class="flex items-stretch shrink-0" aria-hidden="true">
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Bachelor
+                                of Arts (BA)</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">DPS
+                                Certified Security</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">NEBOSH
+                                IGC in Health &amp; Safety</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Active
+                                Shooter Response</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Fire
+                                &amp; Safety ERT Specialist</span></div>
+                        <div class="flex flex-col justify-center px-14 border-r border-primary/20 py-2 shrink-0"><span
+                                class="font-label text-primary text-[10px] uppercase tracking-widest">Validated</span><span
+                                class="text-white font-black text-xl tracking-tighter uppercase whitespace-nowrap">Group
+                                Train the Trainer Cert</span></div>
                     </div>
-                    <div class="h-12 w-[1px] bg-primary/20"></div>
-                    <div class="flex flex-col">
-                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
-                        <span class="text-white font-black text-xl tracking-tighter uppercase">Certified Ethical
-                            Hacker</span>
-                    </div>
-                    <div class="h-12 w-[1px] bg-primary/20"></div>
-                    <div class="flex flex-col">
-                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
-                        <span class="text-white font-black text-xl tracking-tighter uppercase">TAPA FSR Level A</span>
-                    </div>
-                    <div class="h-12 w-[1px] bg-primary/20"></div>
-                    <div class="flex flex-col">
-                        <span class="font-label text-primary text-[10px] uppercase">Validated</span>
-                        <span class="text-white font-black text-xl tracking-tighter uppercase">M.S. Strategic
-                            Security</span>
-                    </div>
+
                 </div>
             </div>
+
+            <style>
+                @keyframes cred-ticker {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+
+                #cred-ticker-track {
+                    animation: cred-ticker 30s linear infinite;
+                    animation-play-state: paused;
+                }
+            </style>
+            <script>
+                    (function () {
+                        var track = document.getElementById('cred-ticker-track');
+                        var outer = document.getElementById('cred-ticker-outer');
+                        var obs = new IntersectionObserver(function (entries) {
+                            entries.forEach(function (e) {
+                                track.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';
+                            });
+                        }, { threshold: 0.3 });
+                        obs.observe(outer);
+                        outer.addEventListener('mouseenter', function () { track.style.animationPlayState = 'paused'; });
+                        outer.addEventListener('mouseleave', function () { track.style.animationPlayState = 'running'; });
+                    })();
+            </script>
         </section>
+
+
 
         <!-- Call to Action -->
         <section class="py-48 px-12 md:px-24 flex flex-col items-center text-center">
